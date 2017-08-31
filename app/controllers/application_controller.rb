@@ -58,8 +58,13 @@ private
   end
 
   def auth_failed(notice=nil)
-    notice = notice.split(' base ').last if notice.include? 'base'
-    notice = notice.nil? ? t(:unauthorized_http) : notice
+    if current_user
+      notice = notice.split(' base ').last if notice.include? 'base'
+      notice = notice.nil? ? t(:unauthorized_http) : notice
+    else
+      notice = 'Please log in or create an account to perform that action.'
+    end
+
     respond_to do |format|
         format.html {
            flash[:notice] = notice
@@ -133,3 +138,4 @@ private
   end
 
 end
+
