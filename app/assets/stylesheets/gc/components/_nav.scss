@@ -61,7 +61,7 @@
   }
 
   .navbar-form &__search-input {
-    width: 400px;
+    width: 100%;
   }
 
   &__search-button {
@@ -154,6 +154,16 @@
   }
 }
 
+@media only screen and (min-width : 1200px) {
+  .navbar {
+    .navbar-form &__search-input {
+      width: 400px;
+    }
+  }
+}
+
+
 .navbar-nav > li > a {
   line-height: 14px;
 }
+
