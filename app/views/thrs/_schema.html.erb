@@ -7,7 +7,7 @@
         <%= render :partial=> 'shared/vote', :locals => { :object => @thr }  %>
         <% if current_user  %>
           <div class="favorite">
-            <%= link_to '',fav_thr_url(:id=>@thr),:title=>'Dodaj do ulubionych',:class=> (current_user.favs.map(&:activityable).include?(@thr) ? "fav active" : "fav") %>
+            <%= link_to '',fav_thr_url(:id=>@thr),:title=>'Add to favorites',:class=> (current_user.favs.map(&:activityable).include?(@thr) ? "fav active" : "fav") %>
             <div class="fav_count"><%= @thr.users_fav.count if @thr.users_fav.count > 0 %></div>
           </div>
         <% end %>
@@ -114,3 +114,4 @@
     <%= render 'ans/list' %>
   </div>
 </div>
+

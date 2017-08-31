@@ -1,9 +1,9 @@
 <div id="main">
   <div class="title">
-    <h1>Nowy uzytkownik</h1>
+    <h1>New User</h1>
   </div>
   <div class="content">
-    <div class="desc">Po utworzeniu uzytkownika Mail nie jest wysyłany</div>
+    <div class="desc">No email will be sent after user creation</div>
     <%= form_for([:admin,@user]) do |f| %>
       <div class="field">
         <%= f.label :name %>
@@ -11,7 +11,7 @@
       </div>
       <div class="field">
         <%= f.label :email %> &nbsp;
-        <span style="height:26px;line-height:26px;" class="small_font"> (nie będzie udostepniny publicznie)</span>
+        <span style="height:26px;line-height:26px;" class="small_font"> (Will not be public)</span>
         <%= f.text_field :email %>
       </div>
       <div class="field">

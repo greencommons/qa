@@ -4,7 +4,7 @@
     <div id="avatars">
       <div id="gravatar">
         <%= image_tag(APP_CONFIG['gravatar_url'] + Digest::MD5.hexdigest(@user.email) + "?d=identicon&s=125") %>
-        <div><%= link_to t('users.change_gravatar'),"http://pl.gravatar.com/" %></div>
+        <div><%= link_to t('users.change_gravatar'),"http://gravatar.com/" %></div>
       </div>
     </div>
   </div>
@@ -63,3 +63,4 @@
   </div>
 </div>
 <% end %>
+

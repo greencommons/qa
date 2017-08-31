@@ -1,5 +1,5 @@
 <div class="title">
-  <h2 class="left">usuniete i ukryte posty</h2>
+  <h2 class="left">Deleted and hidden posts</h2>
   <div class="right">
     <%= render_navigation(:context=>:admin_posts) %>
   </div>
@@ -10,7 +10,7 @@
     <th>data</th>
     <th>autor</th>
     <th>tresc</th>
-    <th>ostatnia aktywnosc</th>
+    <th>last activity</th>
     <th>status</th>
     <% @posts.each do |post| %>
       <tr>
@@ -25,10 +25,11 @@
             <%= link_to truncate(post.commentable.stitle,:length=>50), thr_url(post.commentable,:anchor=> 'comment-'+post.id.to_s) %>
           <% end %>
         </td>
-        <td><%= post.activities.last.name_humanized %> przez <%=raw post.activities.last.user.sname %></td>
+        <td><%= post.activities.last.name_humanized %> by <%=raw post.activities.last.user.sname %></td>
         <td>dsa</td>
       </tr>
     <% end %>
   </table>
   <%= will_paginate(@posts,:params => { :format => nil }) %>
 </div>
+
